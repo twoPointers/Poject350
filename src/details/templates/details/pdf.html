@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pdf</title>
+
+
+    <style>
+
+    body{
+        margin: 20px;
+    }
+   
+</style>
+</head>
+<body>
+    
+       <h3 style="text-align: center;">SHAHJALAL UNIVERSITY OF SCIENCE & TECHNOLOGY<br>Dept. of Computer Science & Engineering</h3>
+
+            {% for st in student %}
+               <div style="font-weight: bold; font-size: 2em;">
+                    Name: {{st.name}}
+                <br>Registration: {{st.reg}}
+                <br>Session: {{st.session}}
+                <br>Credits: {{st.credits}}
+                <br>CGPA: {{st.cgpa}}
+               </div>
+        {% endfor %}
+        
+        {% if semdetail.1|length > 0  %}
+                <span style="text-align: center; font-weight: bold; font-size: 1.5em;"><u>1st semester</u></span>
+                <table border="1" cellpadding="5">
+                    <tr><th>Course ID</th><th>Course Name</th><th>Credit</th><th>GPA</th><th>Lab &#47 Theory</th><th>Major &#47 Minor</th></tr>
+                    {% for res in semdetail.1 %}
+                    <tbody><tr style="text-align:center;">
+                        <td style="text-align:center;">{{res.courseId}}</td>
+                        <td style="text-align:center;">{{res.courseName}}</td>
+                        <td style="text-align:center;">{{res.credit}}</td>
+                        <td style="text-align:center;">{{res.gpa}}</td>
+                        <td style="text-align:center;">
+                        {% if res.isLab %} Lab
+                        {% else %} Theory                        
+                        {% endif %}
+                        </td>
+                        <td style="text-align:center;">
+                            {% if res.isMajor %} Major
+                            {% else %} Minor
+                            {% endif %}
+                        </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                        <tfoot style="font-weight: bold;">
+                            <td></td>
+                            <td style="text-align:center;">Total Completed Credit=</td>
+                            <td style="text-align:center;">{{semfinal.1.credits}}</td>
+                            <td style="text-align:center;">{{gpa.1}}</td>
+                            <td></td>
+                            <td></td>
+                        </tfoot>
+                </table>
+                <br>
+                <br>
+        {% endif %}
+        
+
+        {% if semdetail.2|length > 0  %}
+        <span style="text-align: center; font-weight: bold; font-size: 1.5em;"><u>2nd semester</u></span>
+        <table  border="1" cellpadding="5">
+            <tr><th>Course ID</th><th>Course Name</th><th>Credit</th><th>GPA</th><th>Lab &#47 Theory</th><th>Major &#47 Minor</th></tr>
+            {% for res in semdetail.2 %}
+            <tbody><tr style="text-align:center;">
+                <td style="text-align:center;">{{res.courseId}}</td>
+                <td style="text-align:center;">{{res.courseName}}</td>
+                <td style="text-align:center;">{{res.credit}}</td>
+                <td style="text-align:center;">{{res.gpa}}</td>
+                <td style="text-align:center;">
+                {% if res.isLab %} Lab
+                {% else %} Theory                        
+                {% endif %}
+                </td>
+                <td style="text-align:center;">
+                    {% if res.isMajor %} Major
+                    {% else %} Minor
+                    {% endif %}
+                </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot style="font-weight: bold;">
+                    <td></td>
+                    <td style="text-align:center;">Total Completed Credit=</td>
+                    <td style="text-align:center;">{{semfinal.2.credits}}</td>
+                    <td style="text-align:center;">{{gpa.2}}</td>
+                    <td></td>
+                    <td></td>
+                </tfoot>
+        </table>
+        <br> 
+        <br>      
+        {% endif %}
+
+        {% if semdetail.3|length > 0  %}
+        <span style="text-align: center; font-weight: bold; font-size: 1.5em;"><u>3rd semester</u></span>
+        <table border="1" cellpadding="5">
+            <tr><th>Course ID</th><th>Course Name</th><th>Credit</th><th>GPA</th><th>Lab &#47 Theory</th><th>Major &#47 Minor</th></tr>
+            {% for res in semdetail.3 %}
+            <tbody><tr style="text-align:center;">
+                <td style="text-align:center;">{{res.courseId}}</td>
+                <td style="text-align:center;">{{res.courseName}}</td>
+                <td style="text-align:center;">{{res.credit}}</td>
+                <td style="text-align:center;">{{res.gpa}}</td>
+                <td style="text-align:center;">
+                {% if res.isLab %} Lab
+                {% else %} Theory                        
+                {% endif %}
+                </td>
+                <td style="text-align:center;">
+                    {% if res.isMajor %} Major
+                    {% else %} Minor
+                    {% endif %}
+                </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot style="font-weight: bold;">
+                    <td></td>
+                    <td style="text-align:center;">Total Completed Credit=</td>
+                    <td style="text-align:center;">{{semfinal.3.credits}}</td>
+                    <td style="text-align:center;">{{gpa.3}}</td>
+                    <td></td>
+                    <td></td>
+                </tfoot>
+        </table>
+        <br>
+        <br>
+        {% endif %}
+
+        {% if semdetail.4|length > 0  %}
+        <span style="text-align: center; font-weight: bold; font-size: 1.5em;"><u>4th semester</u></span>
+        <table border="1" cellpadding="5">
+            <tr><th>Course ID</th><th>Course Name</th><th>Credit</th><th>GPA</th><th>Lab &#47 Theory</th><th>Major &#47 Minor</th></tr>
+            {% for res in semdetail.4 %}
+            <tbody><tr style="text-align:center;">
+                <td style="text-align:center;">{{res.courseId}}</td>
+                <td style="text-align:center;">{{res.courseName}}</td>
+                <td style="text-align:center;">{{res.credit}}</td>
+                <td style="text-align:center;">{{res.gpa}}</td>
+                <td style="text-align:center;">
+                {% if res.isLab %} Lab
+                {% else %} Theory                        
+                {% endif %}
+                </td>
+                <td style="text-align:center;">
+                    {% if res.isMajor %} Major
+                    {% else %} Minor
+                    {% endif %}
+                </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot style="font-weight: bold;">
+                    <td></td>
+                    <td style="text-align:center;">Total Completed Credit=</td>
+                    <td style="text-align:center;">{{semfinal.4.credits}}</td>
+                    <td style="text-align:center;">{{gpa.4}}</td>
+                    <td></td>
+                    <td></td>
+                </tfoot>
+        </table>
+        <br>               
+        {% endif %}
+    </body>
+</html>

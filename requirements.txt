@@ -1,0 +1,10 @@
+# To activate this run
+# pip install -r requirements.txt
+# or
+# pip3 install -r requirements.txt
+# 
+Django==3.1
+django-filter==2.4.0
+djangorestframework==3.12.2
+requests==2.25.1
+xhtml2pdf==0.2.5

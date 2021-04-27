@@ -1,0 +1,31 @@
+{% extends "details/base.html" %}
+{% load static %}
+
+{% block mynav %}
+  <div style="margin: 20px;">
+  <ul>
+    <li><a  href="{% url 'home' %}">Individual Result</a></li>
+    <li><a href="{% url 'ranks' %}">Rank</a></li>
+    <li><a class="active" href="{% url 'contact' %}">Contact us</a></li>  
+  </ul>
+</div>
+{% endblock mynav %}
+{% block insideForm %}{% endblock insideForm %}
+
+{% block afterForm %}
+<div style="width:80%; color: white;font-size: 1.5em; margin: 20px;">
+  <form action="{% url 'postcontact' %}" method='POST' name="contact">
+    {% csrf_token %}
+    <label for="email" class="form-label">Email address:</label>
+    <input type="text" class="form-control" name="email" id="email" placeholder="Enter Your Email">
+    <div id="emailHelp" class="form-text mb-2">*We'll never share your email with anyone else.</div>
+
+    <label for="desc" class="form-label">How we can help:</label><br>
+    <textarea class="form-control mb-1" name="desc" id="desc"  cols="60" rows="10" placeholder="Don't Exceed 400 characters."></textarea>
+    <!-- <input style="width: 100%;height: 200px; margin-bottom: 5px;" type="text" name="comment" id="comment"> -->
+    
+  <button type="submit" class="btn btn-danger">Submit</button>
+  </form>
+</div>
+
+{% endblock afterForm %}

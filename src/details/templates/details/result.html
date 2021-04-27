@@ -1,0 +1,218 @@
+{% extends "details/base.html" %}
+{% load static %}
+
+
+{% block mynav %}
+<div style="margin: 20px;">
+    <div class="row">
+        <div class="col-sm-4">
+            <ul>
+                <li><a class="active" href="{% url 'home' %}">Individual Result</a></li>
+                <li><a href="{% url 'ranks' %}">Rank</a></li>
+                <li><a href="{% url 'contact' %}">Contact us</a></li>  
+              </ul>
+        </div>
+        <div class="col-sm-8">
+            {% include 'details/myform2.html' %}
+        </div>
+
+    </div>
+  </div> 
+    
+{% endblock mynav %}
+
+
+{% block insideForm %}{% endblock insideForm %}
+    
+    
+{% block afterForm %}
+
+<br><br>
+    <div style="margin: 20px; text-align: center;">
+    <div class="profile">
+        <img src={% static 'details/images/blankprofile.svg' %} alt="..." width="130"  class="rounded mb-2 img-thumbnail">
+        
+        {% for st in student %}
+            <div class="media-body mb-5 text-white">
+                <h4 class="mt-0 mb-0">{{st.name}}</h4>
+                <h4 class="mt-0 mb-0">{{st.reg}}</h4>
+                <p class="mb-0"> <i>Session: {{st.session}}</i></p>
+                <p class="mb-0"> <i>Credits: {{st.credits}}</i></p>
+                <p class="mb-0"> <i>CGPA: {{st.cgpa}}</i></p>
+               
+        </div>
+        {% endfor %}
+        
+    </div>
+    <form action="{% url 'createpdf' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="resultLink" value="{{resultLink}}">
+        <input type="hidden" name="studentLink" value="{{studentLink}}">
+    
+        <button type="submit" class="btn btn-success">Result as Pdf</button>
+    
+    </form>
+
+<div class="wrap-collabsible">
+    {% if semdetail.1|length > 0  %}
+    <input id="1" class="toggle" type="checkbox" checked>
+    <label for="1" class="lbl-toggle">1st Semester</label>
+    <div class="collapsible-content">
+        <div class="content-inner table-responsive">
+            <table class="table table-striped table-dark text-center">
+                <thead><tr><td>Course ID</td><td>Course Name</td><td>Credit</td><td>GPA</td><td>Lab &#47 Theory</td><td>Major &#47 Minor</td></tr></thead>
+                
+                {% for res in semdetail.1 %}
+                <tbody><tr>
+                    <td>{{res.courseId}}</td>
+                    <td>{{res.courseName}}</td>
+                    <td>{{res.credit}}</td>
+                    <td>{{res.gpa}}</td>
+                    <td>
+                    {% if res.isLab %} Lab
+                    {% else %} Theory                        
+                    {% endif %}
+                    </td>
+                    <td>
+                        {% if res.isMajor %} Major
+                        {% else %} Minor
+                        {% endif %}
+                    </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot style="font-weight: bold;">
+                        <td></td>
+                        <td style="text-align: right;">Total Completed Credit=</td>
+                        <td>{{semfinal.1.credits}}</td>
+                        <td>{{gpa.1}}</td>
+                        <td></td>
+                        <td></td>
+                    </tfoot>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+    {% if semdetail.2|length > 0  %}
+    <input id="2" class="toggle" type="checkbox" checked>
+    <label for="2" class="lbl-toggle">2nd Semester</label>
+    <div class="collapsible-content">
+        <div class="content-inner table-responsive">
+            <table class="table table-striped table-dark text-center">
+                <thead><tr><td>Course ID</td><td>Course Name</td><td>Credit</td><td>GPA</td><td>Lab &#47 Theory</td><td>Major &#47 Minor</td></tr></thead>
+                
+                {% for res in semdetail.2 %}
+                <tbody><tr>
+                    <td>{{res.courseId}}</td>
+                    <td>{{res.courseName}}</td>
+                    <td>{{res.credit}}</td>
+                    <td>{{res.gpa}}</td>
+                    <td>
+                    {% if res.isLab %} Lab
+                    {% else %} Theory                        
+                    {% endif %}
+                    </td>
+                    <td>
+                        {% if res.isMajor %} Major
+                        {% else %} Minor
+                        {% endif %}
+                    </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot style="font-weight: bold;">
+                        <td></td>
+                        <td style="text-align: right;">Total Completed Credit=</td>
+                        <td>{{semfinal.2.credits}}</td>
+                        <td>{{gpa.2}}</td>
+                        <td></td>
+                        <td></td>
+                    </tfoot>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+    {% if semdetail.3|length > 0  %}
+    <input id="3" class="toggle" type="checkbox" checked>
+    <label for="3" class="lbl-toggle">3rd Semester</label>
+    <div class="collapsible-content">
+        <div class="content-inner table-responsive">
+            <table class="table table-striped table-dark text-center">
+                <thead><tr><td>Course ID</td><td>Course Name</td><td>Credit</td><td>GPA</td><td>Lab &#47 Theory</td><td>Major &#47 Minor</td></tr></thead>
+                
+                {% for res in semdetail.3 %}
+                <tbody><tr>
+                    <td>{{res.courseId}}</td>
+                    <td>{{res.courseName}}</td>
+                    <td>{{res.credit}}</td>
+                    <td>{{res.gpa}}</td>
+                    <td>
+                    {% if res.isLab %} Lab
+                    {% else %} Theory                        
+                    {% endif %}
+                    </td>
+                    <td>
+                        {% if res.isMajor %} Major
+                        {% else %} Minor
+                        {% endif %}
+                    </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot style="font-weight: bold;">
+                        <td></td>
+                        <td style="text-align: right;">Total Completed Credit=</td>
+                        <td>{{semfinal.3.credits}}</td>
+                        <td>{{gpa.3}}</td>
+                        <td></td>
+                        <td></td>
+                    </tfoot>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+    {% if semdetail.4|length > 0  %}
+    <input id="4" class="toggle" type="checkbox" checked>
+    <label for="4" class="lbl-toggle">4th Semester</label>
+    <div class="collapsible-content">
+        <div class="content-inner table-responsive">
+            <table class="table table-striped table-dark text-center">
+                <thead><tr><td>Course ID</td><td>Course Name</td><td>Credit</td><td>GPA</td><td>Lab &#47 Theory</td><td>Major &#47 Minor</td></tr></thead>
+                
+                {% for res in semdetail.4 %}
+                <tbody><tr>
+                    <td>{{res.courseId}}</td>
+                    <td>{{res.courseName}}</td>
+                    <td>{{res.credit}}</td>
+                    <td>{{res.gpa}}</td>
+                    <td>
+                    {% if res.isLab %} Lab
+                    {% else %} Theory                        
+                    {% endif %}
+                    </td>
+                    <td>
+                        {% if res.isMajor %} Major
+                        {% else %} Minor
+                        {% endif %}
+                    </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot style="font-weight: bold;">
+                        <td></td>
+                        <td style="text-align: right;">Total Completed Credit=</td>
+                        <td>{{semfinal.4.credits}}</td>
+                        <td>{{gpa.4}}</td>
+                        <td></td>
+                        <td></td>
+                    </tfoot>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+    
+        
+</div>
+    </div>
+
+{% endblock afterForm %}
