@@ -33,11 +33,12 @@
   and go to your browser and type 
   `localhost:8000` (by default `port:8000`,you can change it)
   
-  <h3> To use the API:</h3>
+  <h3> Using the API:</h3>
   
   There are two APIs: 
   - `resultapi/` and 
   - `studentapi/` 
+  
   (for local machine the url is like `localhost:8000/resultapi` and `localhost:8000/studentapi`)
   
   <h4>To filter grades:</h4>
