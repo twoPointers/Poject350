@@ -10,8 +10,20 @@ The aims of this project were
 
 The project is deployed as ... at pythonanywhere.com
 
-To run this project from scratch, following PyPi packages are required:
-- pdfplumber
-- requests
-- django-3.8.1
-- xhtml2pdf
+
+ To activate this run
+
+ `pip install -r requirements.txt`
+
+ or
+ 
+ `pip3 install -r requirements.txt`
+
+> Django==3.1
+django-filter==2.4.0
+
+djangorestframework==3.12.2
+
+requests==2.25.1
+
+xhtml2pdf==0.2.5
