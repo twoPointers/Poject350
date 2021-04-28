@@ -19,11 +19,8 @@ The project is deployed as ... at pythonanywhere.com
  
  `pip3 install -r requirements.txt`
 
-> Django==3.1
-django-filter==2.4.0
-
-djangorestframework==3.12.2
-
-requests==2.25.1
-
-xhtml2pdf==0.2.5
+> `Django==3.1`
+> `django-filter==2.4.0`
+> `djangorestframework==3.12.2`
+> `requests==2.25.1`
+> `xhtml2pdf==0.2.5`
