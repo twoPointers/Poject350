@@ -26,9 +26,9 @@
   To run the project on your local machine,Go to the `src` directory.There you'll find `manage.py` file,
   Then run `python manage.py runserver` and go to your browser and hit `localhost:8000` (by default `port:8000`,you can change it)
   
-  <h3>How you can use our API:</h3>
+  How you can use our API:
       Here are two APIs: `resultapi/` and `studentapi/` (for local machine the url is like `localhost:8000/resultapi` and `localhost:8000/studentapi`)
-        <h5> To filter: </h5>
+              To filter:
                         `resultapi/`:
                                       - stuId ( `localhost:8000/resultapi/?stuId=2017331001` )
                                       - semester ( `localhost:8000/resultapi/?semester= 2` - to Filter only result of 2nd semester)
