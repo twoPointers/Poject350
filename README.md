@@ -11,7 +11,7 @@ The aims of this project were
 The project is deployed as ... at pythonanywhere.com
 
 
- To activate this run
+ To install the dependencies go to project directory and run
 
  `pip install -r requirements.txt`
 
