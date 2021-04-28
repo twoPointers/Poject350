@@ -40,6 +40,7 @@
   - credit ( `localhost:8000/resultapi/?credit= 3` - to Filter only results of `3.00` credit courses)
   - to apply Multiple filters, use `&` between the filter ( `localhost:8000/resultapi/?stuId=2017331001&semester= 2&isMajor= true` - to filter the result of `stuId=2017331001`)
 
+  <h4>To filter:</h4>
 
     studentapi/:
   - reg ( `localhost:8000/resultapi/?reg=2017331001` )
