@@ -45,10 +45,10 @@
   
     resultapi/:
   - stuId ( `localhost:8000/resultapi/?stuId=2017331001` )
-  - semester ( `localhost:8000/resultapi/?semester= 2` - to Filter only results of 2nd semester)
-  - isMajor ( `localhost:8000/resultapi/?isMajor= true` - to Filter only results of 'Major' courses,in case of 'minor' put `false` )
-  - isLab ( `localhost:8000/resultapi/?isLab= true` - to Filter only results of 'Lab' courses,in case of 'theory' put `false` )
-  - credit ( `localhost:8000/resultapi/?credit= 3` - to Filter only results of `3.00` credit courses)
+  - semester ( `localhost:8000/resultapi/?semester=2` - to Filter only results of 2nd semester)
+  - isMajor ( `localhost:8000/resultapi/?isMajor=true` - to Filter only results of 'Major' courses,in case of 'minor' put `false` )
+  - isLab ( `localhost:8000/resultapi/?isLab=true` - to Filter only results of 'Lab' courses,in case of 'theory' put `false` )
+  - credit ( `localhost:8000/resultapi/?credit=3` - to Filter only results of `3.00` credit courses)
 
 to apply Multiple filters, use `&` between the filters 
 example: `localhost:8000/resultapi/?stuId=2017331001&semester= 2&isMajor= true` 
@@ -58,5 +58,5 @@ to filter the result of major courses of 2nd semester of the student with Id-201
 
     studentapi/:
   - reg ( `localhost:8000/resultapi/?reg=2017331001` )
-  - session ( `localhost:8000/resultapi/?session= 2017-2018` - to Filter the details of the students of 2017-2018 session)
-  - name ( `localhost:8000/resultapi/?name= Alex Bob` - to Filter the details of student named `Alex Bob` )
+  - session ( `localhost:8000/resultapi/?session=2017-2018` - to Filter the details of the students of 2017-2018 session)
+  - name ( `localhost:8000/resultapi/?name=Alex Bob` - to Filter the details of student named `Alex Bob` )
