@@ -67,7 +67,7 @@ to filter the result of major courses of 2nd semester of the student with Id-201
    - To log in admin panel on your local machine,enter the URL - `localhost:8000/admin`.
      In database we've the information of admin user.
       To log in,
-                -username- `admin`
-                -password- `admin`
+                username- `admin`
+                password- `admin`
       
       You can add students details in `Students` section, results in `Results` section.
