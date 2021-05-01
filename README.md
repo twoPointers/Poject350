@@ -60,3 +60,13 @@ to filter the result of major courses of 2nd semester of the student with Id-201
   - reg ( `localhost:8000/resultapi/?reg=2017331001` )
   - session ( `localhost:8000/resultapi/?session=2017-2018` - to Filter the details of the students of 2017-2018 session)
   - name ( `localhost:8000/resultapi/?name=Alex Bob` - to Filter the details of student named `Alex Bob` )
+
+
+  <h2>Admin Panel</h2>
+
+      We have our customized admin panel.To login to admin panel on your local machine,enter the
+      URL - `localhost:8000/admin`. In database we've the information of admin user.
+      To log in, username- `admin`
+                 password- `admin`
+      
+      You can add students details in `Students` section, results in 'Results` section.

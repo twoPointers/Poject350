@@ -29,3 +29,7 @@ urlpatterns = [
     path('resultapi/' , views.AllResultsApi.as_view() , name='ResultApi'),
     path('studentapi/' , views.AllStudentsApi.as_view() , name='StudentApi')
 ]
+
+admin.site.index_title = 'Entry Results and Details'
+admin.site.site_header = "CSE,SUST"
+admin.site.site_title= "Admin"
