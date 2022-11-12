@@ -1,4 +1,4 @@
-<h1> SUST RESULT VISUALIZATION </h1>
+<h1> SUST CSE RESULT VISUALIZATION </h1>
   This repo hosts files and codes for our 3rd year project for the course CSE350.
 
   This is a Django web application to help students search and look at their results; optionally using various filters. 
